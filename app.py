@@ -15,7 +15,7 @@ def home():
 
         return render_template(
             "preview.html",
-            generated_html=code["html"]
+            code=code
         )
 
     return render_template("index.html")
