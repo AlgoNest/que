@@ -140,12 +140,11 @@ def call_ai(prompt):
 
     return {"error": "All API calls failed or rate limited."}
 
-def generate_code(code):
+def generate_code(prompt):
     # send prompt to AI model (OpenAI / local LLM)
-    response = call_ai(build_prompt(code))
+    response = call_ai(prompt)
 
     return {
-        "html": response["html"],
-        "css": response.get("css", ""),
-        "js": response.get("js", "")
+        "frontend": response["frontend"],
+        "backend": response["backend"]
     }
